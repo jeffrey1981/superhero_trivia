@@ -1,13 +1,19 @@
-## links to pre-project work
+# pre-project stuff and whatnot and so-forth.
 
-### User Story
+## User Story
 
 ![Alt text](/Users/jeffrey/Desktop/userstory.png)
 
-### Wireframe
+## Wireframes
 
-![Alt text](/Users/jeffrey/Desktop/wireframe.png)
+####starter page
+
+![Alt text](https://i.imgur.com/cF9q3H1.png)
+
+####game page
+
+![Alt text](https://i.imgur.com/rZmhtoa.png)
 
 ### Psuedocode
 
-coming soon when comlpeted!!
+coming soon when comlpeted!! If it gets completed......
