@@ -1,23 +1,27 @@
 
 
-body {
+body  {
     background-image: url("https://i.imgur.com/Hi5uXYY.png");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
 	text-align: center;
-	font-size: 30px;
+	font-size: 35px;
 	font-family: "Bangers";
 	color: black;
+
 }
 
-#start{
+#startBtn {
 	color: black;
+	font-size: 30pm;
 }
 
 #qbub {
 	text-align: center;
 	background-position: top;
 	z-index: 2;
+	margin-top: 145px;
+
 }
 
 .abubimg {
@@ -26,17 +30,21 @@ body {
 	z-index: 100;
 	background-image: url("../images/AnswerBubble.png");
 	width: 400px;
-	height: 300px;
+	height: 339px;
     background-repeat: no-repeat;
     background-position: center;
-    padding-top: 275px;
+    padding-top: 262px;
     margin: 10px;
 }
 
 #bub {
 	position: absolute;
 	width: 100%;
-	margin: 200px auto 0;
+	margin: 322px auto 0;
+	 background-repeat: no-repeat;
+    background-size: contain;
 	text-align: center;
+	text-align: center;
+	cursor: auto;
 }
 

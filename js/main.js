@@ -1,11 +1,12 @@
+
 var heroQuiz = [
 	{quest: "Who is Tony Starks assistant?", answer: ["Mary Jane", "Lois Lane", "Pepper Potts"], correctA: 2}, 
-	{quest: "What year did Iron Man first apear in comics?", answer: ["1963", "1972", "1967"], correctA: 0}, 
+	{quest: "What year did Iron Man <br> first apear in comics?", answer: ["1963", "1972", "1967"], correctA: 0}, 
 	{quest: "Batman is also knows as?", answer: ["The Caped Crusader", "Man of Steel", "Great Vigilante"], correctA: 0}, 
-	{quest: "What is the name of the metal bonded to Wolverine’s bones?", answer: ["Vibranium", "Cosmitanium", "Adamantium"], correctA: 2}, 
-	{quest: "What superhero is Jean Grey from X-Men?", answer: ["Phoenix", "Rogue", "Storm"], correctA: 1}, 
-	{quest: "Captain America fights crime against which evil organization?",answer: ["12", "6", "17"], correctA: 0}, 
-	{quest: "How many core Avengers are there?", answer: ["The Green Goblin", "Thor's adopted brother", "Tony Stark's friend"], correctA: 2}, 
+	{quest: "What is the name of the metal <br> bonded to Wolverine’s bones?", answer: ["Vibranium", "Cosmitanium", "Adamantium"], correctA: 2}, 
+	{quest: "What superhero is <br> Jean Grey from X-Men?", answer: ["Phoenix", "Rogue", "Storm"], correctA: 1}, 
+	{quest: "Captain America fights crime against <br> which evil organization?",answer: ["Hydra", "Cobra", "Synge"], correctA: 0}, 
+	{quest: "How many core Avengers are there?", answer: ["12", "6", "17"], correctA: 2}, 
 	{quest: "Who is Loki?", answer: ["The Green Goblin", "Thor's adopted brother", "Tony Stark's friend"], correctA: 2}, 
 	{quest: "Who played Superman in the 1978 movie?", answer: ["Adam West", "Michael Keaton", "Christopher Reeve"], correctA: 2}, 
 	{quest: "Dr.Doom played the villian in which film?", answer: ["X-Men", "Superman Returns", "Fantastic 4"], correctA: 2}
