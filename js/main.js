@@ -25,23 +25,34 @@ var $a1 = $('#a1');
 var $a2 = $('#a2');
 var $a3 = $('#a3');
 var $bub = $('#bub');
+var $tally = $('#tally');
 
 $a1.on('click', answerQuestion);
 $a2.on('click', answerQuestion);
 $a3.on('click', answerQuestion);
 
 
+function startGame(evt) {
+	evt.preventDefault();
+ 	currentQuestion = 0;
+ 	score = 0;
+
+    render();	
+}
+
+
 function answerQuestion(evt) {
 	var choice = parseInt(this.id.substr(1)) - 1;
 	console.log('They answered: ' + heroQuiz[currentQuestion].answer[choice]);
 	console.log(choice === heroQuiz[currentQuestion].correctA ? 'correct' : 'wrong biach')
-	if (choice === heroQuiz[currentQuestion].correctA)
-		score ++
 	
-
+	
 	if (currentQuestion < heroQuiz.length - 1) {
 
 		// do scoring
+
+	if (choice === heroQuiz[currentQuestion].correctA)
+		score ++
 
 		currentQuestion++;
 		render();
@@ -53,18 +64,15 @@ function answerQuestion(evt) {
 
 $('#startBtn').on('click', startGame);
 
-function startGame(evt) {
-	evt.preventDefault();
- 	currentQuestion = 0;
- 	score = 0;
 
-    render();	
-}
+
 
 
 function render(){
 	// display the question
 	$bub.html(heroQuiz[currentQuestion].quest);
+
+	// .fadeIn(1000)
 
 	// display the answers
 	$a1.html("<br>" + heroQuiz[currentQuestion].answer[0]);
@@ -73,7 +81,7 @@ function render(){
 
 
 	// display the score
-	$
+	$tally.text(score);
 
 }
 
