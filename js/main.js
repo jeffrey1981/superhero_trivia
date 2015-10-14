@@ -7,9 +7,14 @@ var heroQuiz = [
 	{quest: "What superhero is <br> Jean Grey from X-Men?", answer: ["Phoenix", "Rogue", "Storm"], correctA: 1}, 
 	{quest: "Captain America fights crime against <br> which evil organization?",answer: ["Hydra", "Cobra", "Synge"], correctA: 0}, 
 	{quest: "How many core Avengers are there?", answer: ["12", "6", "17"], correctA: 2}, 
-	{quest: "Who is Loki?", answer: ["The Green Goblin", "Thor's adopted brother", "Tony Stark's friend"], correctA: 2}, 
+	{quest: "Who is Loki?", answer: ["The Green Goblin", "Thor's adopted brother", "Tony Stark's friend"], correctA: 1}, 
 	{quest: "Who played Superman in the 1978 movie?", answer: ["Adam West", "Michael Keaton", "Christopher Reeve"], correctA: 2}, 
-	{quest: "Dr.Doom played the villian in which film?", answer: ["X-Men", "Superman Returns", "Fantastic 4"], correctA: 2}
+	{quest: "Plastic man belonged to which <br> superhero Team?", answer: ["X-Men", "Fantastic 4", "Justice League"], correctA: 1},
+	{quest: "Dr.Strange first apeared in which year?", answer: ["1968", "1992", "1963"], correctA: 2},
+	{quest: "Peter Parker is a skilled...?", answer: ["Editor", "Photographer", "Writer"], correctA: 1},
+	{quest: "Dr.Doom played the villian <br> in which film?", answer: ["X-Men", "Superman Returns", "Fantastic 4"], correctA: 2},
+	{quest: "Dare Devil protects what city?", answer: ["Hells Kitchen", "Boston", "NYC"], correctA: 0},
+	{quest: "Who played Ducard in the <br> 2005 Batman Begins film?", answer: ["Tom Wilkinson", "Ralph Fiennes", "Liam Neeson"], correctA: 2}
 ];
 
 var score = 0;
@@ -30,6 +35,9 @@ function answerQuestion(evt) {
 	var choice = parseInt(this.id.substr(1)) - 1;
 	console.log('They answered: ' + heroQuiz[currentQuestion].answer[choice]);
 	console.log(choice === heroQuiz[currentQuestion].correctA ? 'correct' : 'wrong biach')
+	if (choice === heroQuiz[currentQuestion].correctA)
+		score ++
+	
 
 	if (currentQuestion < heroQuiz.length - 1) {
 
@@ -41,28 +49,6 @@ function answerQuestion(evt) {
 		// ran out of questions
 	}
 }
-
-// $('#beTheHero').click(function (){
-// 	$("#bub").prepend(quest[0]);
-// })
-
-// function startGame(){
-// 	for ( var i = 0; i < heroQuiz.length; i++){
-// 		var output = "";
-
-		// output += quest[i] + '\n';
-		// for ( var j = 0; j < 3; j++){
-		// 	var x = j+1; //created a temporary varable to prevent the [0] in the array from showing and adds 1 to t.
-		// 	output += x + '). ' + Ans[i][j] + '\n'; //+= concatination - adding in strings
-
-		// }
-		
-		// var answer = prompt(output);
-		// document.getElementById("answers").innerHTML = "The correct answer is " + Ans[i][ansKey[i]];
-		// alert("The correct answer is " + Ans[i][ansKey[i]]);//tell you where to look for the answer.
-
-// 	}
-// }
 
 
 $('#startBtn').on('click', startGame);
@@ -81,17 +67,15 @@ function render(){
 	$bub.html(heroQuiz[currentQuestion].quest);
 
 	// display the answers
-	$a1.html(heroQuiz[currentQuestion].answer[0]);
-	$a2.html(heroQuiz[currentQuestion].answer[1]);
-	$a3.html(heroQuiz[currentQuestion].answer[2]);
+	$a1.html("<br>" + heroQuiz[currentQuestion].answer[0]);
+	$a2.html("<br>" + heroQuiz[currentQuestion].answer[1]);
+	$a3.html("<br>" + heroQuiz[currentQuestion].answer[2]);
 
 
 	// display the score
+	$
 
 }
-
-
-
 
 //Pseudocode
 
@@ -127,5 +111,25 @@ function render(){
 // set as much as i can to primive data use jquery.
 //to set theme set it as an integer funtion.
 //
+// $('#beTheHero').click(function (){
+// 	$("#bub").prepend(quest[0]);
+// })
 
+// function startGame(){
+// 	for ( var i = 0; i < heroQuiz.length; i++){
+// 		var output = "";
+
+		// output += quest[i] + '\n';
+		// for ( var j = 0; j < 3; j++){
+		// 	var x = j+1; //created a temporary varable to prevent the [0] in the array from showing and adds 1 to t.
+		// 	output += x + '). ' + Ans[i][j] + '\n'; //+= concatination - adding in strings
+
+		// }
+		
+		// var answer = prompt(output);
+		// document.getElementById("answers").innerHTML = "The correct answer is " + Ans[i][ansKey[i]];
+		// alert("The correct answer is " + Ans[i][ansKey[i]]);//tell you where to look for the answer.
+
+// 	}
+// }
 
