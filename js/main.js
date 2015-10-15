@@ -24,7 +24,7 @@ var score = 0;
 var gameTheme = "";
 var currentQuestion = 0;
 var winGame = "<p>YOU WON THIS  <br> ROUND, BUT YOU <br> HAVEN'T SEEN THE <br> LAST OF ME!!</p>";
-var loseGame = "<p>  MUAHAHAHA!!! <br>NOT THIS TIME <br> YOU DO GOODER!!</p>";
+var loseGame = "<p>  MUA HA HA HA!! <br>NOT THIS TIME <br> YOU DO GOODER!!</p>";
 
 var $a1 = $('#a1');
 var $a2 = $('#a2');
@@ -66,17 +66,13 @@ function answerQuestion(evt) {
 			if (parseInt($tally.html()) > 9 && currentQuestion === 17) {
 
 				renderGameOverWin();
-				//$('#gameover').html(winGame).fadeIn(1000);
-
 				hideDivs();
 				
 			} else if (parseInt($tally.html()) < 9 && currentQuestion === 17) {
 
 				renderGameOverLose();
 				hideDivs();
-				//$('#gameover').html(loseGAme).fadeIn(1000)
-			
-
+				
 		}
 	}
 };
@@ -114,12 +110,15 @@ function hideDivs() {
 	$('#answers').hide();
 	$('.bubble').hide();
 }
+
+// render if the winnner wins or looses and the correct message appears.
 function renderGameOverWin() {
 	$('#gameover').html(winGame).fadeIn(1000);
 }
 function renderGameOverLose() {
 	$('#gameover').html(loseGame).fadeIn(1000);
 }
+
 function render() {
 
 //answer bubbles will appear.
@@ -136,9 +135,13 @@ function render() {
 // display the score
 	$tally.text(score);
 
+}
+
+
+
 //end of game message
 // 	hidegameover();
-}
+
 
 
 //Pseudocode

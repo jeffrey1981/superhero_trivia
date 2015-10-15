@@ -61,14 +61,12 @@ h1 {
 }
 
 #tally {
-	/*background-image: url("../images.score.png");*/
 	font-size: 150px;
 	font-family: "Bangers";
 	text-align: right;
 	margin: -358px 273px 197px 0px;
-
-
 }
+
 .bubble {
 	margin: 0 auto;
 
