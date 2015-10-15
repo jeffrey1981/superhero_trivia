@@ -7,7 +7,7 @@ var heroQuiz = [
 	{quest: "What superhero is <br> Jean Grey from X-Men?", answer: ["Phoenix", "Rogue", "Storm"], correctA: 1}, 
 	{quest: "Captain America fights crime against <br> which evil organization?",answer: ["Hydra", "Cobra", "Synge"], correctA: 0}, 
 	{quest: "How many core Avengers are there?", answer: ["12", "6", "17"], correctA: 2}, 
-	{quest: "Who is Loki?", answer: ["The Green Goblin", "Thor's adopted brother", "Tony Stark's friend"], correctA: 1}, 
+	{quest: "Who is Loki?", answer: ["God of Demons", "God of Mischief", "God of Mordor"], correctA: 1}, 
 	{quest: "Who played Superman in the 1978 movie?", answer: ["Adam West", "Michael Keaton", "Christopher Reeve"], correctA: 2}, 
 	{quest: "Plastic man belonged to which <br> superhero Team?", answer: ["X-Men", "Fantastic 4", "Justice League"], correctA: 1},
 	{quest: "Dr.Strange first apeared in which year?", answer: ["1968", "1992", "1963"], correctA: 2},
@@ -15,11 +15,15 @@ var heroQuiz = [
 	{quest: "Dr.Doom played the villian <br> in which film?", answer: ["X-Men", "Superman Returns", "Fantastic 4"], correctA: 2},
 	{quest: "Dare Devil protects what city?", answer: ["Hells Kitchen", "Boston", "NYC"], correctA: 0},
 	{quest: "Who played Ducard in the <br> 2005 Batman Begins film?", answer: ["Tom Wilkinson", "Ralph Fiennes", "Liam Neeson"], correctA: 2}
+	//{quest: "Who does number two work for?", answer: ["", "", ""], correctA: },
+
 ];
 
 var score = 0;
 var gameTheme = "";
 var currentQuestion = 0;
+var winGame = "<p>YOU WON THIS  <br> ROUND, BUT YOU <br> HAVEN'T SEEN THE <br> LAST OF ME!!</p>";
+var loseGAme = "<p>MUAHAHAHA <br> NOT THIS TIME <br> YOU DO GOODER!!</p>";
 
 var $a1 = $('#a1');
 var $a2 = $('#a2');
@@ -44,46 +48,80 @@ function startGame(evt) {
 function answerQuestion(evt) {
 	var choice = parseInt(this.id.substr(1)) - 1;
 	console.log('They answered: ' + heroQuiz[currentQuestion].answer[choice]);
-	console.log(choice === heroQuiz[currentQuestion].correctA ? 'correct' : 'wrong biach')
+	console.log(choice === heroQuiz[currentQuestion].correctA ? 'BANG!' : 'POWW!')
 	
 	
 	if (currentQuestion < heroQuiz.length - 1) {
 
-		// do scoring
+		//account for correct answers
 
-	if (choice === heroQuiz[currentQuestion].correctA)
-		score ++
+		if (choice === heroQuiz[currentQuestion].correctA)
+			score ++
 
-		currentQuestion++;
-		render();
-	} else {
-		// ran out of questions
-	}
-}
+			currentQuestion++;
+			render();
+		} else {
+			if (tally > 7 && currentQuestion === 15) {
+				$('#gameover').html(winGame).fadeIn(1000);
 
+				hideDivs();
+				
+			} else if (tally < 8 && currentQuestion === 15) {
+				$('#gameover').html(loseGAme).fadeIn(1000)
+	
+};
 
 $('#startBtn').on('click', startGame);
 
+$(document).ready(function() {
+	hideBubs();
+	hidegameover();
+});
 
+function hideBubs() {
+	$('#a1').hide();
+	$('#a2').hide();
+	$('#a3').hide();
+}
+function showBubs() {
+	$('#a1').fadeIn(1000);
+	$('#a2').fadeIn(1000);
+	$('#a3').fadeIn(1000);
+	$bub.fadeIn(1000);
+}
+function hidegameover() {
+	$('#gameover').hide();
+}
+function hideDivs() {
+	hideBubs();
+	$('#tally').hide();
+	$('#bub').hide();
+	$('#qbub').hide();
+	$('#question').hide();
+	$('#answers').hide();
+	$('.bubble').hide();
+}
 
+function render() {
 
-
-function render(){
+	//answer bubbles will appear.
+	showBubs();
+	
 	// display the question
 	$bub.html(heroQuiz[currentQuestion].quest);
-
-	// .fadeIn(1000)
 
 	// display the answers
 	$a1.html("<br>" + heroQuiz[currentQuestion].answer[0]);
 	$a2.html("<br>" + heroQuiz[currentQuestion].answer[1]);
 	$a3.html("<br>" + heroQuiz[currentQuestion].answer[2]);
 
-
 	// display the score
 	$tally.text(score);
 
+	//ens game message
+	hidegameover();
 }
+
 
 //Pseudocode
 

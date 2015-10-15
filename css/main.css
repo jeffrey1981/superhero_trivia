@@ -8,6 +8,7 @@ body  {
 	font-family: "Bangers";
 	color: black;
 	margin-top: 100px;
+	position: relative;
 
 }
 
@@ -23,7 +24,7 @@ h1 {
 #qbub {
 	text-align: center;
 	background-position: top;
-	z-index: 2;
+	z-index: -100;
 	margin-top: 145px;
 
 }
@@ -59,18 +60,46 @@ h1 {
 }
 
 #tally {
-	background-image: url("../images.score.png");
-	float; right;
-	font-size: 90px;
+	/*background-image: url("../images.score.png");*/
+	font-size: 150px;
 	font-family: "Bangers";
-	text-align: center;
+	text-align: right;
+	margin: -358px 273px 197px 0px;
+
+
+}
+.bubble {
+	margin: 0 auto;
 
 }
 
+#gameover {
+	background-image: url("../images/QuestionBubble.png");
+	font-family: "Bangers";
+	height: 606px;
+	width: 763px;
+	background-size: cover;
+	font-size: 75px;
+	text-align: center;
+	position: absolute;
+	top: 310%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
 
-
-
-
+#loser {
+	background-image: url("../images/QuestionBubble.png");
+	font-family: "Bangers";
+	height: 606px;
+	width: 763px;
+	background-size: cover;
+	font-size: 75px;
+	text-align: center;
+	position: absolute;
+	top: 310%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
 
 
 
