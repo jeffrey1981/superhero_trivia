@@ -16,7 +16,7 @@ var heroQuiz = [
 	{quest: "Dare Devil protects what city?", answer: ["Hells Kitchen", "Boston", "NYC"], correctA: 0},
 	{quest: "Who played Ducard in the <br> 2005 Batman Begins film?", answer: ["Tom Wilkinson", "Ralph Fiennes", "Liam Neeson"], correctA: 2},
 	{quest: "Who does number two work for?", answer: ["Fat Bastard", "Frau Farbissina", "Dr. Evil"], correctA: 2},
-	{quest: "Both my parents were shot in a dark alley?", answer: ["Peter Parker", "Bruce Wayne", "Bruce Banner"], correctA: 1},
+	{quest: "Both my parents were <br> shot in a dark alley?", answer: ["Peter Parker", "Bruce Wayne", "Bruce Banner"], correctA: 1},
 	{quest: "I was on a wheaties box, <br> now I am on Vanity Fair?", answer: ["Nastia Liukin", "Caitlyn Jenner", "Serena Williams"], correctA: 1}
 ];
 
