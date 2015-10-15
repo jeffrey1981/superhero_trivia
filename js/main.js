@@ -14,16 +14,17 @@ var heroQuiz = [
 	{quest: "Peter Parker is a skilled...?", answer: ["Editor", "Photographer", "Writer"], correctA: 1},
 	{quest: "Dr.Doom played the villian <br> in which film?", answer: ["X-Men", "Superman Returns", "Fantastic 4"], correctA: 2},
 	{quest: "Dare Devil protects what city?", answer: ["Hells Kitchen", "Boston", "NYC"], correctA: 0},
-	{quest: "Who played Ducard in the <br> 2005 Batman Begins film?", answer: ["Tom Wilkinson", "Ralph Fiennes", "Liam Neeson"], correctA: 2}
-	//{quest: "Who does number two work for?", answer: ["", "", ""], correctA: },
-
+	{quest: "Who played Ducard in the <br> 2005 Batman Begins film?", answer: ["Tom Wilkinson", "Ralph Fiennes", "Liam Neeson"], correctA: 2},
+	{quest: "Who does number two work for?", answer: ["Fat Bastard", "Frau Farbissina", "Dr. Evil"], correctA: 2},
+	{quest: "Both my parents were shot in a dark alley?", answer: ["Peter Parker", "Bruce Wayne", "Bruce Banner"], correctA: 1},
+	{quest: "I was on a wheaties box, <br> now I am on Vanity Fair?", answer: ["Nastia Liukin", "Caitlyn Jenner", "Serena Williams"], correctA: 1}
 ];
 
 var score = 0;
 var gameTheme = "";
 var currentQuestion = 0;
 var winGame = "<p>YOU WON THIS  <br> ROUND, BUT YOU <br> HAVEN'T SEEN THE <br> LAST OF ME!!</p>";
-var loseGAme = "<p>MUAHAHAHA <br> NOT THIS TIME <br> YOU DO GOODER!!</p>";
+var loseGame = "<p>  MUAHAHAHA!!! <br>NOT THIS TIME <br> YOU DO GOODER!!</p>";
 
 var $a1 = $('#a1');
 var $a2 = $('#a2');
@@ -53,22 +54,31 @@ function answerQuestion(evt) {
 	
 	if (currentQuestion < heroQuiz.length - 1) {
 
-		//account for correct answers
+//account for correct answers
 
 		if (choice === heroQuiz[currentQuestion].correctA)
 			score ++
 
 			currentQuestion++;
 			render();
+
 		} else {
-			if (tally > 7 && currentQuestion === 15) {
-				$('#gameover').html(winGame).fadeIn(1000);
+			if (parseInt($tally.html()) > 9 && currentQuestion === 17) {
+
+				renderGameOverWin();
+				//$('#gameover').html(winGame).fadeIn(1000);
 
 				hideDivs();
 				
-			} else if (tally < 8 && currentQuestion === 15) {
-				$('#gameover').html(loseGAme).fadeIn(1000)
-	
+			} else if (parseInt($tally.html()) < 9 && currentQuestion === 17) {
+
+				renderGameOverLose();
+				hideDivs();
+				//$('#gameover').html(loseGAme).fadeIn(1000)
+			
+
+		}
+	}
 };
 
 $('#startBtn').on('click', startGame);
@@ -78,6 +88,8 @@ $(document).ready(function() {
 	hidegameover();
 });
 
+
+//Hide and reveal functionality
 function hideBubs() {
 	$('#a1').hide();
 	$('#a2').hide();
@@ -92,6 +104,7 @@ function showBubs() {
 function hidegameover() {
 	$('#gameover').hide();
 }
+
 function hideDivs() {
 	hideBubs();
 	$('#tally').hide();
@@ -101,25 +114,30 @@ function hideDivs() {
 	$('#answers').hide();
 	$('.bubble').hide();
 }
-
+function renderGameOverWin() {
+	$('#gameover').html(winGame).fadeIn(1000);
+}
+function renderGameOverLose() {
+	$('#gameover').html(loseGame).fadeIn(1000);
+}
 function render() {
 
-	//answer bubbles will appear.
+//answer bubbles will appear.
 	showBubs();
 	
-	// display the question
+// display the question
 	$bub.html(heroQuiz[currentQuestion].quest);
 
-	// display the answers
+// display the answers
 	$a1.html("<br>" + heroQuiz[currentQuestion].answer[0]);
 	$a2.html("<br>" + heroQuiz[currentQuestion].answer[1]);
 	$a3.html("<br>" + heroQuiz[currentQuestion].answer[2]);
 
-	// display the score
+// display the score
 	$tally.text(score);
 
-	//ens game message
-	hidegameover();
+//end of game message
+// 	hidegameover();
 }
 
 
@@ -155,7 +173,7 @@ function render() {
 // question array
 // answer array is a nested array
 // set as much as i can to primive data use jquery.
-//to set theme set it as an integer funtion.
+// to set theme set it as an integer funtion.
 //
 // $('#beTheHero').click(function (){
 // 	$("#bub").prepend(quest[0]);
