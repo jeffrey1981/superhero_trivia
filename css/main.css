@@ -34,7 +34,7 @@ h1 {
 	display: inline-block;
 	text-align: center;
 	z-index: 100;
-	background-image: url("../images/AnswerBubble.png");
+	background-image: url("../images/answerbubble.png");
 	width: 400px;
 	height: 150px;
     background-repeat: no-repeat;
@@ -73,7 +73,7 @@ h1 {
 }
 
 #gameover {
-	background-image: url("../images/QuestionBubble.png");
+	background-image: url("../images/questionbubble.png");
 	font-family: "Bangers";
 	height: 606px;
 	width: 763px;
@@ -87,7 +87,7 @@ h1 {
 }
 
 #loser {
-	background-image: url("../images/QuestionBubble.png");
+	background-image: url("../images/questionbubble.png");
 	font-family: "Bangers";
 	height: 606px;
 	width: 763px;
