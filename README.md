@@ -1,4 +1,4 @@
-# pre-project stuff and whatnot and so-forth.
+# Superhero Trivia
 
 ## User Story
 
@@ -14,6 +14,3 @@
 
 ![Alt text](https://i.imgur.com/rZmhtoa.png)
 
-### Psuedocode
-
-coming soon when comlpeted!! If it gets completed......
